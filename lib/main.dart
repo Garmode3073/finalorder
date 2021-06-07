@@ -37,6 +37,9 @@ class _WrapperState extends State<Wrapper> {
     final user = Provider.of<bool>(context);
     g.width = MediaQuery.of(context).size.width;
     g.height = MediaQuery.of(context).size.height;
+    if (user == null) {
+      return Container();
+    }
     return user ? HomePage() : LoginPage();
   }
 }
