@@ -1,4 +1,5 @@
 import 'package:finalorder/auth/login.dart';
+import 'package:finalorder/common/loading.dart';
 import 'package:finalorder/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -38,7 +39,7 @@ class _WrapperState extends State<Wrapper> {
     g.width = MediaQuery.of(context).size.width;
     g.height = MediaQuery.of(context).size.height;
     if (user == null) {
-      return Container();
+      return Loading();
     }
     return user ? HomePage() : LoginPage();
   }
