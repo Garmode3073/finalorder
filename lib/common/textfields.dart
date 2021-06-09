@@ -23,6 +23,9 @@ class _TextFldState extends State<TextFld> {
       cursorColor: g.green,
       validator: widget.validity,
       controller: widget.ctrler,
+      keyboardType: widget.hint == 'Email'
+          ? TextInputType.emailAddress
+          : TextInputType.text,
       decoration: InputDecoration(
         hintText: widget.hint,
         hintStyle: TextStyle(color: g.green2),
@@ -87,6 +90,48 @@ class _PassFldState extends State<PassFld> {
               visible = !visible;
             });
           },
+        ),
+      ),
+    );
+  }
+}
+
+class NumFld extends StatefulWidget {
+  final String hint;
+  final Function validity;
+  final TextEditingController ctrler;
+
+  const NumFld({Key key, this.hint, this.validity, this.ctrler})
+      : super(key: key);
+  @override
+  _NumFldState createState() => _NumFldState();
+}
+
+class _NumFldState extends State<NumFld> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      style: TextStyle(
+        color: g.green,
+        fontSize: 20,
+      ),
+      cursorColor: g.green,
+      validator: widget.validity,
+      controller: widget.ctrler,
+      keyboardType: TextInputType.number,
+      decoration: InputDecoration(
+        hintText: widget.hint,
+        hintStyle: TextStyle(color: g.green2),
+        border: OutlineInputBorder(
+          borderSide: BorderSide(
+            color: g.green,
+          ),
+          borderRadius: BorderRadius.circular(g.width * g.height * 0.000075),
+        ),
+        enabled: true,
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: g.green2),
+          borderRadius: BorderRadius.circular(g.width * g.height * 0.000075),
         ),
       ),
     );
