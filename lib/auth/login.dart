@@ -1,3 +1,4 @@
+import 'package:finalorder/auth/register.dart';
 import 'package:finalorder/common/textfields.dart';
 import 'package:flutter/material.dart';
 import 'package:finalorder/globals.dart' as g;
@@ -145,7 +146,15 @@ class _LoginPageState extends State<LoginPage> {
                       animationDuration: Duration(milliseconds: 100),
                       splashColor: g.deadGrey,
                       onPressed: () {
-                        //donothing
+                        email.clear();
+                        pass.clear();
+                        Navigator.push(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation1, animation2) =>
+                                RegisterPage(),
+                          ),
+                        );
                       },
                       child: Text(
                         'No Account? Register',
