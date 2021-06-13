@@ -1,4 +1,6 @@
 import 'package:finalorder/auth/register.dart';
+import 'package:finalorder/common/buttons.dart';
+import 'package:finalorder/common/labels.dart';
 import 'package:finalorder/common/textfields.dart';
 import 'package:flutter/material.dart';
 import 'package:finalorder/globals.dart' as g;
@@ -33,25 +35,8 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: g.height * 0.13,
               ),
-              Center(
-                child: Text(
-                  'Final Order',
-                  style: TextStyle(
-                    color: g.green,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Center(
-                child: Text(
-                  'A place to compete with yourself',
-                  style: TextStyle(
-                    color: g.green,
-                    fontSize: 15,
-                  ),
-                ),
-              ),
+              AppName(),
+              TagLine(),
               SizedBox(
                 height: g.height * 0.07,
               ),
@@ -94,17 +79,10 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: g.deadGrey,
-                      border: Border.all(
-                          color: g.green, style: BorderStyle.solid, width: 5),
-                      borderRadius:
-                          BorderRadius.circular(g.width * g.height * 0.00005),
-                    ),
+                  PrimaryButton(
                     height: g.height * 0.08,
                     width: g.width * 0.55,
-                    child: RawMaterialButton(
+                    activity: RawMaterialButton(
                       animationDuration: Duration(milliseconds: 100),
                       splashColor: g.deadGrey2,
                       onPressed: () {
@@ -132,17 +110,10 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: g.deadGrey2,
-                      border: Border.all(
-                          color: g.green2, style: BorderStyle.solid, width: 5),
-                      borderRadius:
-                          BorderRadius.circular(g.width * g.height * 0.00005),
-                    ),
+                  SecondaryButton(
                     height: g.height * 0.08,
                     width: g.width * 0.7,
-                    child: RawMaterialButton(
+                    activity: RawMaterialButton(
                       animationDuration: Duration(milliseconds: 100),
                       splashColor: g.deadGrey,
                       onPressed: () {
