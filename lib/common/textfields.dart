@@ -99,9 +99,10 @@ class _PassFldState extends State<PassFld> {
 class NumFld extends StatefulWidget {
   final String hint;
   final Function validity;
+  final int length;
   final TextEditingController ctrler;
 
-  const NumFld({Key key, this.hint, this.validity, this.ctrler})
+  const NumFld({Key key, this.hint, this.validity, this.ctrler, this.length})
       : super(key: key);
   @override
   _NumFldState createState() => _NumFldState();
@@ -117,6 +118,8 @@ class _NumFldState extends State<NumFld> {
       ),
       cursorColor: g.green,
       validator: widget.validity,
+      maxLength: widget.length,
+      maxLengthEnforced: true,
       controller: widget.ctrler,
       keyboardType: TextInputType.number,
       decoration: InputDecoration(

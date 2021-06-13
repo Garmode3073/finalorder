@@ -93,10 +93,12 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: NumFld(
                           hint: 'Phone Number',
                           ctrler: phone,
+                          length: 10,
                           validity: (String phone) {
                             if (phone.trim().isEmpty) {
                               return 'Phone no field must not be empty';
-                            } else if (!isNumeric(phone.trim())) {
+                            } else if (!isNumeric(phone.trim()) ||
+                                phone.trim().length < 10) {
                               return 'Invalid Phone Number';
                             }
                             return null;
@@ -110,6 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: NumFld(
                           hint: 'Age',
                           ctrler: age,
+                          length: 3,
                           validity: (String age) {
                             if (age.trim().isEmpty) {
                               return 'Invalid Age';
